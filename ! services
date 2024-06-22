@@ -7,3 +7,14 @@ docker run -it \
     docker.elastic.co/elasticsearch/elasticsearch:8.4.3
 
 curl http://localhost:9200
+
+
+# running Ollama in docker
+docker run -it \
+    -v ollama:/root/.ollama \
+    -p 11434:11434 \
+    --name ollama \
+    ollama/ollama
+
+docker exec -it ollama bash
+ollama pull phi3
