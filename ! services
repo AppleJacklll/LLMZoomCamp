@@ -1,5 +1,6 @@
 docker run -it \
-    --name elasticsearch \
+    --name elasticsearch_eval \
+    -m 4GB \
     -p 9200:9200 \
     -p 9300:9300 \
     -e "discovery.type=single-node"\
@@ -18,3 +19,5 @@ docker run -it \
 
 docker exec -it ollama bash
 ollama pull phi3
+
+# prior to run elastic search need to start docker image and if elastic search exited unexpectedly add -m 4GB 
